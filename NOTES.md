@@ -8,7 +8,9 @@
 - The OpenAI key lives only in `.env` (OPENAI_API_KEY=...). `.env` is in `.gitignore`.
 
 ## How to run it
-You need two windows open on your computer, both inside the Rally. folder.
+**Easy way (Windows):** double-click **Start Rally.bat** in the Rally folder. It installs Node.js LTS just for you if it's missing (no admin password), installs packages the first time, opens the AI helper and Expo in two windows, and opens a QR code page (also saved as `rally-qr.png`). Keep both windows open.
+
+**By hand:** you need two windows open on your computer, both inside the Rally. folder.
 1. **AI helper:** `npm run helper` — leave it open. It says if your key was found.
 2. **Expo:** `npx expo start` — scan the QR code with Expo Go on your phone.
 - Phone and computer must be on the same Wi-Fi. The app finds the helper at your computer's Wi-Fi address, port 3001.

@@ -18,5 +18,8 @@
     "web": "expo start --web",
     "helper": "node helper/server.js"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "qrcode": "^1.5.4"
+  }
 }
