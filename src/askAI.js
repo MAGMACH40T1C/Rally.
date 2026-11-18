@@ -2,6 +2,7 @@
 // The app never holds the OpenAI key. It sends the checklist to the
 // Rally. AI helper running on your computer, and the helper asks OpenAI.
 
+import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 import { PLACES, getPlace } from './data/places';
 import { AGE_GROUPS, describeAnswers } from './data/checklist';
@@ -14,6 +15,8 @@ export const FRIENDLY_ERROR =
 // Expo Go tells us the computer's Wi-Fi address (like 192.168.1.20:8081).
 // The helper runs on that same computer, so we reuse the address.
 export function helperUrl() {
+  // In a web browser, the helper is on the same computer as the page.
+  if (Platform.OS === 'web') return `http://${window.location.hostname || 'localhost'}:${HELPER_PORT}`;
   const hostUri = Constants.expoConfig?.hostUri || '';
   const host = hostUri.split(':')[0] || 'localhost';
   return `http://${host}:${HELPER_PORT}`;
