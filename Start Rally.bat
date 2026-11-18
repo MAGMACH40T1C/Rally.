@@ -31,6 +31,9 @@ call npx expo install --fix
 call npx expo-doctor
 :ready
 
+rem --- Close any old Rally. helper or Expo still running ---
+powershell -NoProfile -Command "foreach($p in 3001,8081){Get-NetTCPConnection -LocalPort $p -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }}"
+
 rem --- 3. Start the AI helper and Expo in their own windows ---
 start "Rally. AI helper - keep open" cmd /k npm run helper
 start "Rally. Expo - keep open" cmd /k npx expo start

@@ -12,6 +12,16 @@ const { findMatches, readModel } = require('../ai/rallyAI');
 
 const ROOT = path.join(__dirname, '..');
 const PORT = 3001;
+const STATUS_FILE = path.join(ROOT, 'helper-status.txt');
+
+// Saves what happened last (never the key) so problems are easy to check.
+function report(message) {
+  const line = `[${new Date().toLocaleString()}] ${message}`;
+  console.log(line);
+  try {
+    fs.writeFileSync(STATUS_FILE, line + '\n');
+  } catch {}
+}
 
 // Read the key from .env only.
 function readKey() {
@@ -65,10 +75,10 @@ const server = http.createServer(async (req, res) => {
     try {
       const answer = await findMatches(JSON.parse(await readBody(req)), readKey());
       if (answer.matches.length === 0) throw new Error('the AI gave no matches from the trusted list');
-      console.log(`[${new Date().toLocaleTimeString()}] Sent matches to the app.`);
+      report('OK: sent matches to the app.');
       return send(res, 200, answer);
     } catch (e) {
-      console.log(`[${new Date().toLocaleTimeString()}] Problem: ${e.message}`);
+      report(`Problem: ${e.message}`);
       return send(res, 502, { error: 'ai_unavailable' });
     }
   }
@@ -91,4 +101,5 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`  AI model:  ${readModel()}`);
   console.log('  Leave this window open while you use the app.');
   console.log('');
+  report(`Started. Key in .env: ${readKey() ? 'found' : 'NOT FOUND'}. Model: ${readModel()}.`);
 });

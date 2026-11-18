@@ -26,6 +26,9 @@ rem --- 2. Install any new packages - quick if nothing changed ---
 echo   Checking Rally.'s packages...
 call npm install
 
+rem --- Close any old Rally. helper or Expo still running ---
+powershell -NoProfile -Command "foreach($p in 3001,8082){Get-NetTCPConnection -LocalPort $p -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }}"
+
 rem --- 3. Start the AI helper and the web version ---
 start "Rally. AI helper - keep open" cmd /k npm run helper
 start "Rally. Web - keep open" cmd /k npx expo start --web --port 8082

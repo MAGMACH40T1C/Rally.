@@ -106,7 +106,16 @@ async function findMatches(body, key) {
       }),
     });
     if (!res.ok) {
-      throw new Error(res.status === 401 ? 'OpenAI says the key is wrong or expired (401)' : `OpenAI error ${res.status}`);
+      let detail = '';
+      try {
+        detail = String((await res.json()).error?.message || '');
+      } catch {}
+      detail = detail.replace(/sk-[\w-]+/g, 'sk-…').slice(0, 300); // never show a key
+      const why =
+        res.status === 401 ? 'OpenAI says the key is wrong, revoked or expired' :
+        res.status === 429 ? 'OpenAI says the account is out of credit or over its limit' :
+        `OpenAI error ${res.status}`;
+      throw new Error(`${why}${detail ? ` — ${detail}` : ''}`);
     }
     const data = await res.json();
     const answer = JSON.parse(data.choices?.[0]?.message?.content || '{}');
