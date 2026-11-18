@@ -10,7 +10,7 @@
 ## How to run it
 **Easy way (Windows):** double-click **Start Rally.bat** in the Rally folder. It installs Node.js LTS just for you if it's missing (no admin password), installs packages the first time, opens the AI helper and Expo in two windows, and opens a QR code page (also saved as `rally-qr.png`). Keep both windows open.
 
-**In a web browser (no Expo Go):** double-click **Start Rally (Web).bat**. It starts the AI helper and opens Rally. at http://localhost:8081. Keep both windows open. Great for screen-recording the video.
+**In a web browser (no Expo Go):** double-click **Start Rally (Web).bat**. It starts the AI helper and opens Rally. at http://localhost:8082. Keep both windows open. Great for screen-recording the video.
 
 **By hand:** you need two windows open on your computer, both inside the Rally. folder.
 1. **AI helper:** `npm run helper` — leave it open. It says if your key was found.

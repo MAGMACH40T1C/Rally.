@@ -28,9 +28,9 @@ call npm install
 
 rem --- 3. Start the AI helper and the web version ---
 start "Rally. AI helper - keep open" cmd /k npm run helper
-start "Rally. Web - keep open" cmd /k npx expo start --web
+start "Rally. Web - keep open" cmd /k npx expo start --web --port 8082
 echo.
-echo   Rally. will open in your browser in a moment (http://localhost:8081).
+echo   Rally. will open in your browser in a moment (http://localhost:8082).
 echo   Keep both new windows open. You can close this one.
 timeout /t 10 >nul
 exit /b
