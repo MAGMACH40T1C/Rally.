@@ -72,6 +72,7 @@ const server = http.createServer(async (req, res) => {
     return send(res, 200, { ok: true, keyLoaded: Boolean(readKey()), model: readModel() });
   }
   if (req.method === 'POST' && (req.url === '/match' || req.url === '/api/match')) {
+    report('The app asked for matches. Asking OpenAI...');
     try {
       const answer = await findMatches(JSON.parse(await readBody(req)), readKey());
       if (answer.matches.length === 0) throw new Error('the AI gave no matches from the trusted list');
