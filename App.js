@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BackHandler, Platform } from 'react-native';
+import { BackHandler, Platform, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -69,14 +69,36 @@ export default function App() {
   else if (top.name === 'safety') screen = <SafetyScreen goBack={goBack} />;
   else screen = <HomeScreen go={go} />;
 
+  const app = (
+    <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>
+      <StatusBar style="dark" />
+      {screen}
+    </SafeAreaView>
+  );
+
   return (
-    <SafeAreaProvider>
-      <SafeAreaView
-        style={{ flex: 1, backgroundColor: C.bg, width: '100%', maxWidth: Platform.OS === 'web' ? 480 : undefined, alignSelf: 'center' }}
+    <SafeAreaProvider>{Platform.OS === 'web' ? <PhoneFrame>{app}</PhoneFrame> : app}</SafeAreaProvider>
+  );
+}
+
+// Web only: show the app inside a phone-sized frame (400px wide, full window
+// height, centered on a plain background). Expo Go never uses this.
+function PhoneFrame({ children }) {
+  return (
+    <View style={{ flex: 1, height: '100%', backgroundColor: '#E7E3EE', alignItems: 'center' }}>
+      <View
+        style={{
+          flex: 1,
+          width: '100%',
+          maxWidth: 400,
+          height: '100%',
+          overflow: 'hidden',
+          backgroundColor: C.bg,
+          boxShadow: '0 0 40px rgba(31, 35, 64, 0.18)',
+        }}
       >
-        <StatusBar style="dark" />
-        {screen}
-      </SafeAreaView>
-    </SafeAreaProvider>
+        {children}
+      </View>
+    </View>
   );
 }

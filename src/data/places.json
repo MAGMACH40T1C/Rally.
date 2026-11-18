@@ -1,0 +1,185 @@
+[
+  {
+    "id": "library",
+    "name": "Public Library Teen Volunteers",
+    "emoji": "📚",
+    "interests": [
+      "reading",
+      "kids",
+      "tech",
+      "arts"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 11,
+    "minAgeAlone": 12,
+    "description": "Help shelve books, set up summer reading events, read to younger kids, or help with craft and tech programs. Libraries are calm, supervised public places.",
+    "howToStart": "Ask at the front desk of your local public library about teen volunteer programs."
+  },
+  {
+    "id": "food-bank",
+    "name": "Local Food Bank or Food Pantry",
+    "emoji": "🥫",
+    "interests": [
+      "food",
+      "community",
+      "friends"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 8,
+    "minAgeAlone": 16,
+    "description": "Sort donated food, pack boxes for families, and help at food drives. Great to do with friends or family, and you can see the difference right away.",
+    "howToStart": "With a trusted adult, look up the food bank or pantry that serves your town and sign up for a group shift."
+  },
+  {
+    "id": "animal-shelter",
+    "name": "Animal Shelter or Humane Society",
+    "emoji": "🐾",
+    "interests": [
+      "animals"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 10,
+    "minAgeAlone": 16,
+    "description": "Make toys and blankets for shelter pets, help with cleaning and laundry, socialize cats, or help at adoption events. Younger volunteers usually work alongside a parent.",
+    "howToStart": "Ask a trusted adult to check your local shelter’s website for youth or family volunteer programs."
+  },
+  {
+    "id": "parks",
+    "name": "Park, Beach, or Trail Clean-Up",
+    "emoji": "🌳",
+    "interests": [
+      "outdoors",
+      "environment",
+      "friends",
+      "sports"
+    ],
+    "setting": "outdoors",
+    "minAgeWithAdult": 6,
+    "minAgeAlone": 14,
+    "description": "Pick up litter, plant trees and flowers, or help care for trails at events run by your town’s parks department or a nature group.",
+    "howToStart": "Look for clean-up days on your town’s parks and recreation page with a trusted adult."
+  },
+  {
+    "id": "senior-center",
+    "name": "Senior Center or Retirement Community",
+    "emoji": "👵",
+    "interests": [
+      "seniors",
+      "arts",
+      "tech",
+      "music"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 11,
+    "minAgeAlone": 14,
+    "description": "Play games, help with crafts, perform music, or teach older adults how to use their phones. Many seniors love talking with young people.",
+    "howToStart": "With a trusted adult, call your town’s senior center and ask about youth volunteers."
+  },
+  {
+    "id": "youth-club",
+    "name": "Boys & Girls Club or Community Youth Center",
+    "emoji": "🏀",
+    "interests": [
+      "kids",
+      "sports",
+      "arts",
+      "friends"
+    ],
+    "setting": "both",
+    "minAgeWithAdult": 13,
+    "minAgeAlone": 13,
+    "description": "Help younger kids with homework, games, sports, and art activities. Staff are always there to supervise.",
+    "howToStart": "Ask the staff at your local club or youth center about junior volunteer or junior staff programs."
+  },
+  {
+    "id": "garden",
+    "name": "Community Garden",
+    "emoji": "🥕",
+    "interests": [
+      "outdoors",
+      "environment",
+      "food"
+    ],
+    "setting": "outdoors",
+    "minAgeWithAdult": 6,
+    "minAgeAlone": 14,
+    "description": "Plant, water, and harvest vegetables. Some gardens give food to local pantries, so you help feed people too.",
+    "howToStart": "With a trusted adult, ask your town or a local garden club about volunteer days."
+  },
+  {
+    "id": "habitat-restore",
+    "name": "Habitat for Humanity ReStore",
+    "emoji": "🔨",
+    "interests": [
+      "building",
+      "community",
+      "friends"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 14,
+    "minAgeAlone": 16,
+    "description": "Help sort, price, and organize donated furniture and building supplies. The money raised helps build homes for families.",
+    "howToStart": "Ask a trusted adult to check your nearest ReStore’s youth volunteer rules."
+  },
+  {
+    "id": "charity-run",
+    "name": "Charity Walk or Fun Run Helper",
+    "emoji": "🏃",
+    "interests": [
+      "sports",
+      "outdoors",
+      "friends",
+      "community"
+    ],
+    "setting": "outdoors",
+    "minAgeWithAdult": 8,
+    "minAgeAlone": 14,
+    "description": "Hand out water, cheer runners, help with sign-in, or set up and clean up at a charity race. Lots of energy and fun with friends.",
+    "howToStart": "With a trusted adult, look for charity walks or runs in your town and sign up as a volunteer."
+  },
+  {
+    "id": "school-club",
+    "name": "School Service Club or Tutoring",
+    "emoji": "🏫",
+    "interests": [
+      "kids",
+      "reading",
+      "tech",
+      "friends"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 11,
+    "minAgeAlone": 11,
+    "description": "Join your school’s service club, tutor younger students, or help teachers with events. It’s right at school, so it’s easy to get to.",
+    "howToStart": "Ask your school counselor which service clubs or tutoring programs count for volunteer hours."
+  },
+  {
+    "id": "hospital",
+    "name": "Hospital Junior Volunteers",
+    "emoji": "🏥",
+    "interests": [
+      "health",
+      "community"
+    ],
+    "setting": "indoors",
+    "minAgeWithAdult": 14,
+    "minAgeAlone": 14,
+    "description": "Deliver flowers and mail, help at the gift shop, or make cards for patients. A great fit if you’re thinking about a health career.",
+    "howToStart": "Ask a trusted adult to look up your local hospital’s junior or teen volunteer program and its age rules."
+  },
+  {
+    "id": "art-music",
+    "name": "Community Arts or Music Events",
+    "emoji": "🎨",
+    "interests": [
+      "arts",
+      "music",
+      "kids"
+    ],
+    "setting": "both",
+    "minAgeWithAdult": 10,
+    "minAgeAlone": 14,
+    "description": "Help set up festivals, paint murals, run kids’ craft tables, or play music at community events.",
+    "howToStart": "With a trusted adult, check your town’s arts council or community calendar for volunteer spots."
+  }
+]

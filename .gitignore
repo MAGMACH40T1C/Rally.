@@ -6,3 +6,4 @@ node_modules/
 .DS_Store
 rally-qr.png
 rally-qr.html
+dist/

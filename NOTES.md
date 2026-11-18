@@ -19,6 +19,22 @@
 - If you start Expo with `--tunnel`, the phone can't reach the helper. Use the normal `npx expo start` on the same Wi-Fi instead.
 - First time on a new computer: run `npm install`, then `npx expo install --fix` and `npx expo-doctor`.
 
+## Putting it online with Vercel
+How it works online: Vercel builds the website with `npx expo export -p web`, serves the `dist` folder, and sends every page to the app (settings are in `vercel.json`). The web app asks the AI through the Vercel function `api/match.js`, which reads the key from Vercel's `OPENAI_API_KEY` setting. The key is never in the app or on GitHub.
+1. Go to vercel.com and sign in with GitHub.
+2. Click **Add New → Project**, pick the **Rally.** repository, and click **Import**.
+3. Leave Framework Preset as **Other**. Vercel reads the build settings from `vercel.json`.
+4. Open **Environment Variables** and add `OPENAI_API_KEY` with your OpenAI key as the value.
+5. Click **Deploy**. Every new push to GitHub updates the website by itself.
+- If you change the key later, update it in Vercel → Settings → Environment Variables, then redeploy.
+- Tip: set a monthly spending limit on platform.openai.com, because anyone with the link can use the AI. The function allows at most 8 requests a minute from the same address.
+
+## How the AI is reached
+- Expo Go → the local AI helper on your computer (`npm run helper`).
+- Web on your own computer (localhost) → the local AI helper too.
+- Web online (Vercel) → `api/match.js`.
+- All three use the same code in `ai/rallyAI.js` and the same trusted list in `src/data/places.json`.
+
 ## What's done (Version 1)
 1. AI matches: fill in the checklist, tap "Find my matches", and the AI picks trusted places for you, starting with "Nice choices!".
 2. Browse a list of trusted volunteer places.
@@ -29,6 +45,7 @@
 
 ## What's next
 - Test with real students and fix anything confusing.
+- Put the web version online with Vercel (steps above).
 - Pick features from "Maybe Later".
 
 ## Maybe Later
