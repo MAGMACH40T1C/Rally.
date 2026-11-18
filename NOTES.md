@@ -1,3 +1,40 @@
 # Notes
 
 - After each save point, push it to GitHub.
+
+## Settings
+- Expo SDK: 58 (matches Expo Go from the app store). Only change this if Expo Go on the phone changes.
+- AI model: gpt-5.4-mini
+- The OpenAI key lives only in `.env` (OPENAI_API_KEY=...). `.env` is in `.gitignore`.
+
+## How to run it
+You need two windows open on your computer, both inside the Rally. folder.
+1. **AI helper:** `npm run helper` — leave it open. It says if your key was found.
+2. **Expo:** `npx expo start` — scan the QR code with Expo Go on your phone.
+- Phone and computer must be on the same Wi-Fi. The app finds the helper at your computer's Wi-Fi address, port 3001.
+- If you start Expo with `--tunnel`, the phone can't reach the helper. Use the normal `npx expo start` on the same Wi-Fi instead.
+- First time on a new computer: run `npm install`, then `npx expo install --fix` and `npx expo-doctor`.
+
+## What's done (Version 1)
+1. AI matches: fill in the checklist, tap "Find my matches", and the AI picks trusted places for you, starting with "Nice choices!".
+2. Browse a list of trusted volunteer places.
+3. Read a description, minimum age, and how to start for each place.
+4. Safety tips for volunteering with adults.
+5. Safe AI answers: the AI only picks from Rally.'s trusted list, the app throws away anything else, and places are filtered by age.
+- Safety: no names (nickname only, no numbers), no addresses, chats aren't saved, no public profiles. Only checklist answers are saved on the phone.
+
+## What's next
+- Test with real students and fix anything confusing.
+- Pick features from "Maybe Later".
+
+## Maybe Later
+- The user can filter volunteer opportunities by age requirements.
+- The user can view the location of volunteer sites on a map.
+- The user can check the schedule and availability of each opportunity.
+- The user can save their favorite volunteer opportunities for later.
+- The user can share volunteer opportunities with friends via a link.
+- The user can report any unsafe or suspicious volunteer listings.
+- The user can receive reminders about upcoming volunteer events they signed up for.
+- The user can see ratings and reviews for each volunteer organization.
+- The user can search for volunteer opportunities by date or timeframe.
+- The user can easily reset their preferences for finding new opportunities.
