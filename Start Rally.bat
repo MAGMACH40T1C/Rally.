@@ -5,6 +5,14 @@ echo.
 echo   Starting Rally. ...
 echo.
 
+rem --- 0. Make .env for the OpenAI key if it's missing ---
+if exist .env goto havekey
+echo OPENAI_API_KEY=paste-your-key-here> .env
+echo   Notepad is opening .env. Replace paste-your-key-here with your NEW OpenAI key,
+echo   then save it with Ctrl+S and close Notepad.
+start /wait notepad .env
+:havekey
+
 rem --- 1. Make sure Node.js is available - no admin password needed ---
 where node >nul 2>nul
 if not errorlevel 1 goto havenode
